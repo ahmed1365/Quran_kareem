@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -17,25 +16,31 @@ class MyDrawer extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
-          DrawerHeader(
-            decoration: const BoxDecoration(
-              color: Colors.white,
-            ),
-            child: Column(
-              children: [
-                Image.asset(
-                  'assets/quran.png',
-                  height: 80,
-                ),
-                const Text(
-                  'Al Quran',
-                  style: TextStyle(fontSize: 20),
-                ),
-
-              ],
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: DrawerHeader(
+              decoration: const BoxDecoration(
+                color: Colors.lightBlueAccent,
+              ),
+              child: Column(
+                children: [
+                  Image.asset(
+                    'assets/quran.png',
+                    height: 80,
+                  ),
+                  SizedBox(
+                    height: 15.0,
+                  ),
+                  const Text(
+                    'El-Quran El-Kareem',
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
             ),
           ),
-
           ListTile(
             leading: const Icon(
               Icons.settings,
@@ -49,7 +54,6 @@ class MyDrawer extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => const Settings()));
             },
           ),
-
           ListTile(
             leading: const Icon(
               Icons.share,
@@ -58,7 +62,8 @@ class MyDrawer extends StatelessWidget {
               'Share',
             ),
             onTap: () {
-              Share.share('''*Quran app*\n u can develop it from my github github.com/ahmed1365 ''');
+              Share.share(
+                  '''*Quran app*\n u can develop it from my github github.com/ahmed1365/Quran_kareem ''');
               Navigator.pop(context);
             },
           ),
@@ -76,10 +81,8 @@ class MyDrawer extends StatelessWidget {
               }
             },
           ),
-
         ],
       ),
     );
   }
 }
-
