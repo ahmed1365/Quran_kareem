@@ -233,7 +233,7 @@ class _SurahBuilderState extends State<SurahBuilder> {
                   ),
                 ]),
           ),
-          backgroundColor: const Color.fromARGB(255, 56, 115, 59),
+          backgroundColor: Colors.lightBlue,
         ),
         body: SingleSuraBuilder(LengthOfSura),
       ),
