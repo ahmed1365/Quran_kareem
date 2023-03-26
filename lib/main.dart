@@ -7,20 +7,6 @@ import 'package:quran_kareem/index_page.dart';
 
 void main() {
   runApp(const MyApp());
-}
-
-List arabic = [];
-List malayalam = [];
-List quran = [];
-
-readJson() async {
-  final String response =
-      await rootBundle.loadString("assets/adklakdlsakdl.json");
-  final data = json.decode(response);
-  arabic = data["quran"];
-  malayalam = data["malayalam"];
-  return quran = [arabic, malayalam];
-}
 
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
