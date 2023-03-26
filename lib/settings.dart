@@ -15,9 +15,11 @@ class _SettingsState extends State<Settings> {
       child: Scaffold(
         appBar: AppBar(
           title: const Text(
-            "Settings",
+            "Settings",style: TextStyle(
+            fontWeight: FontWeight.bold,
           ),
-          backgroundColor: const Color.fromARGB(255, 56, 115, 59),
+          ),
+          backgroundColor: Colors.lightBlue,
         ),
         body: SafeArea(
           child: Padding(
@@ -26,22 +28,23 @@ class _SettingsState extends State<Settings> {
               child: Column(
                 children: [
                   const Text(
-                    'Arabic Font Size:',
+                    'حجم الخط في وضع القراءة العادية',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 15,
+                      fontSize: 18,
                     ),
                   ),
                   Slider(
                     value: arabicFontSize,
                     min: 20,
                     max: 40,
+                    activeColor: Colors.lightBlue,
                     onChanged: (value) {
                       setState(() {
                         arabicFontSize = value;
                       });
                     },
-
+                    thumbColor: Colors.white,
                   ),
 
                   Text(
@@ -56,16 +59,17 @@ class _SettingsState extends State<Settings> {
                     child: Divider(),
                   ),
                   const Text(
-                    'Mushaf Mode Font Size:',
+                    'حجم الخط في وضع المصحف الشريف',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 15,
+                      fontSize: 18,
                     ),
                   ),
                   Slider(
                     value: mushafFontSize,
                     min: 20,
                     max: 50,
+                    activeColor: Colors.lightBlue,
                     onChanged: (value) {
                       setState(() {
                         mushafFontSize = value;
@@ -87,7 +91,7 @@ class _SettingsState extends State<Settings> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      ElevatedButton(
+                      ElevatedButton (
                           onPressed: () {
                             setState(() {
                               arabicFontSize = 28;
@@ -95,7 +99,7 @@ class _SettingsState extends State<Settings> {
                             });
                             saveSetting();
                           },
-                          child: const Text('Reset')),
+                          child: const Text('Reset' ,)),
                       ElevatedButton(
                           onPressed: () {
                             saveSetting();
