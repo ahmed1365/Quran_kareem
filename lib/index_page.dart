@@ -24,10 +24,10 @@ class _IndexPageState extends State<IndexPage> {
       floatingActionButton: FloatingActionButton(
         tooltip: 'Go to bookmark',
         child: const Icon(Icons.bookmark),
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.lightBlue,
         onPressed: () async {
           fabIsClicked = true;
-          if (await readBookmark() == true) {
+          if ( await readBookmark() == true) {
             Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -44,10 +44,10 @@ class _IndexPageState extends State<IndexPage> {
         centerTitle: true,
         title: const Text(
           //"القرآن",
-          "Quran",
+          "El-Quran El-Kareem",
           style: TextStyle(
             //fontFamily: 'quran',
-              fontSize: 35,
+              fontSize: 30,
               fontWeight: FontWeight.bold,
               shadows: [
                 Shadow(
@@ -57,7 +57,7 @@ class _IndexPageState extends State<IndexPage> {
                 ),
               ]),
         ),
-        backgroundColor: const Color.fromARGB(255, 56, 115, 59),
+        backgroundColor: Colors.lightBlue,
       ),
       body: FutureBuilder(
         future: ReadJson(),
